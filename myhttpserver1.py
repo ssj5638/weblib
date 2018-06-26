@@ -1,6 +1,6 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
-port = '9999'
+port = 9999
 
 
 class MyHTTPRequestHandler(BaseHTTPRequestHandler):
@@ -14,6 +14,6 @@ class MyHTTPRequestHandler(BaseHTTPRequestHandler):
         self.wfile.write('<h1> Hello World</h1>'.encode('utf-8'))
 
 # 서버구동
-httpd = HTTPServer(('', 9999), MyHTTPRequestHandler)
+httpd = HTTPServer(('', port), MyHTTPRequestHandler)
 print('HTTP Server Starts....')
 httpd.serve_forever()
